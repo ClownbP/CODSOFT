@@ -11,7 +11,15 @@ public class NextRando {
         if (PlayerVal == x) {
             System.out.println("Correct You Win");
         } else {
-            System.out.println("You were close though");
+            System.out.println("Hey! No let's try again.");
+            for (int i = 0; i < 3; i++) {
+                int PlayerVal_ = ScanPlayerVal.nextInt();
+                if (PlayerVal_ - x < 25) {
+                    System.out.println("You were pretty close though");
+                } else {
+                    System.out.println("Omg you are so wrong! Try one more time.");
+                }
+            }
         }
         ScanPlayerVal.close();
     }
