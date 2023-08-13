@@ -27,7 +27,7 @@ public class NextRando {
                     System.out.println("Omg you are so wrong! Try one more time.");
                 }
             }
-            System.out.printf("%d", x);
+            System.out.printf("Psych The number actually was: %d", x);
         }
         ScanPlayerVal.close();
     }
