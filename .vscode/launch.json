@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "GradeCalcMain",
+            "request": "launch",
+            "mainClass": "GradeCalcMain",
+            "projectName": "CODSOFT_d1e83fdf"
+        },
+        {
+            "type": "java",
+            "name": "GradeCalc",
+            "request": "launch",
+            "mainClass": "GradeCalc",
+            "projectName": "CODSOFT_d1e83fdf"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
