@@ -440,7 +440,7 @@ public class NewJFrame extends javax.swing.JFrame {
             S.setText("Fail");
         }
 
-    }// GEN-LAST:event_jButton1ActionPerformed
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
