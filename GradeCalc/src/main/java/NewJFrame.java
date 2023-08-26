@@ -478,7 +478,6 @@ public class NewJFrame extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AvText;
     private javax.swing.JTextField C;
     private javax.swing.JTextField ComputerText;
@@ -500,5 +499,4 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    // End of variables declaration//GEN-END:variables
 }
