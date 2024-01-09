@@ -1,0 +1,62 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+#Import Data
+
+
+grid_size = 10 
+input_dim = data.shape[1]  
+learning_rate = 0.5  
+epochs = 1000 
+
+
+weights = np.random.rand(grid_size, grid_size, input_dim)
+
+
+for epoch in range(epochs):
+    for idx in range(len(data)):
+        
+        sample = data[np.random.randint(0, len(data))]
+
+       
+        bmu_pos = np.array([0, 0])
+        min_dist = np.linalg.norm(sample - weights[0][0])
+
+        for i in range(grid_size):
+            for j in range(grid_size):
+                dist = np.linalg.norm(sample - weights[i][j])
+                if dist < min_dist:
+                    min_dist = dist
+                    bmu_pos = np.array([i, j])
+
+       
+        for i in range(grid_size):
+            for j in range(grid_size):
+                dist_to_bmu = np.linalg.norm(bmu_pos - np.array([i, j]))
+                influence = np.exp(-0.5 * (dist_to_bmu ** 2))
+                weights[i][j] += learning_rate * influence * (sample - weights[i][j])
+
+    
+    learning_rate *= (1 - epoch / epochs)
+
+
+u_matrix = np.zeros((grid_size, grid_size))
+
+for i in range(grid_size):
+    for j in range(grid_size):
+        if i > 0:
+            u_matrix[i][j] += np.linalg.norm(weights[i][j] - weights[i - 1][j])
+        if i < grid_size - 1:
+            u_matrix[i][j] += np.linalg.norm(weights[i][j] - weights[i + 1][j])
+        if j > 0:
+            u_matrix[i][j] += np.linalg.norm(weights[i][j] - weights[i][j - 1])
+        if j < grid_size - 1:
+            u_matrix[i][j] += np.linalg.norm(weights[i][j] - weights[i][j + 1])
+
+u_matrix /= 4  
+
+
+plt.imshow(u_matrix, cmap='viridis', interpolation='nearest')
+plt.title('Unified Distance Matrix (U-matrix)')
+plt.colorbar()
+plt.show()
