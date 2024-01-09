@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 grid_size = 10 
 input_dim = data.shape[1]  
-learning_rate = 0.5  
+learning_rate = 0.8  
 epochs = 1000 
 
 
